@@ -10,14 +10,19 @@ import {
 } from "./style";
 import Users from "../../assets/users.png";
 import { useRef } from "react";
+import api from "../../services/api";
 
 function Home() {
   const inputName = useRef();
   const inputAge = useRef();
   const inputEmail = useRef();
 
-  function registerNewUser() {
-    console.log(inputName.current.value);
+  async function registerNewUser() {
+    await api.post("/usuarios", {
+      name: inputName.current.value,
+      age: parseInt(inputAge.current.value),
+      email: inputEmail.current.value,
+    });
   }
 
   return (
