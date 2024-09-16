@@ -10,12 +10,15 @@ import Button from "../../components/Button";
 import api from "../../services/api";
 
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import TopBackground from "../../components/TopBackground";
 
 function Home() {
   const inputName = useRef();
   const inputAge = useRef();
   const inputEmail = useRef();
+
+  const navigate = useNavigate();
 
   async function registerNewUser() {
     await api.post("/usuarios", {
@@ -72,7 +75,9 @@ function Home() {
           </Button>
         </Form>
 
-        <Button type="button">Ver Lista de Usuários</Button>
+        <Button type="button" onClick={() => navigate("/lista-de-usuarios")}>
+          Ver Lista de Usuários
+        </Button>
       </Container>
     </>
   );
