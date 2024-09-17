@@ -1,11 +1,5 @@
-import {
-  Container,
-  ContainerInputs,
-  Form,
-  Input,
-  InputLabel,
-  Title,
-} from "./styles";
+import { Container, ContainerInputs, Form, Input, InputLabel } from "./styles";
+import Title from "../../components/Title";
 import Button from "../../components/Button";
 import api from "../../services/api";
 
